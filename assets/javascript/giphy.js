@@ -18,7 +18,7 @@ function populateButtons(searchArray,classToAdd,areaToAddTo){
 
 $(document).on("click", ".searchButton", function(){
 	var type = $(this).data("type");
-	//var queryURL = "http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=YOUR_API_KEY&limit=5"
+	 var queryURL = "http://api.giphy.com/v1/gifs/search?q="+type+"&api_key=f9807de676eb433e8a7b4d9a214a3041&limit=10";
 	$.ajax({url:queryURL,method:'GET'})
 		.done(function(response){
 			for(var i = 0; i < response.data.length[i]; i++){
@@ -51,7 +51,7 @@ $(document).on("click",".searchImage", function(){
 	}
 })
 
-$(#addSearch).on("click",function(){
+$("#addSearch").on("click",function(){
 	var newSearch = $("input").eq(0).val();
 	searchArray.push(newSearch);
 	populateButtons(searchArray,"searchButton", "#buttonsArea");
